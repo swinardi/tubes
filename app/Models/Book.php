@@ -10,11 +10,13 @@ class Book extends Model
 {
     protected $table = 'books';
     protected $fillable = ['judul', 'penulis', 'penerbit', 'tahun_terbit', 'jumlah_buku', 'deskripsi', 'lokasi', 'cover'];
-    
+   
     public function Transaksi()
     {
         return $this->hasMany(Transaksi::class);
     }
 
     use HasFactory;
+
+    public $timestamp = true;
 }

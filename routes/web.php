@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/books','App\Http\Controllers\BooksController@index');
+Route::get('/books/tambah','App\Http\Controllers\BooksController@tambah');
+Route::post('/books/store','App\Http\Controllers\BooksController@store');
+Route::get('/books/hapus/{id}','App\Http\Controllers\BooksController@hapus');
+Route::get('/books/edit/{id}','App\Http\Controllers\BooksController@edit');
+Route::post('/books/update','App\Http\Controllers\BooksController@update');
