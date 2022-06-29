@@ -9,7 +9,7 @@ class BooksController extends Controller
     public function index()
     {
     	$books = DB::table('books')->get();
-        return view('buku.index',['books' => $books]);
+    	return view('buku.index',['books' => $books]);
     }
 
     public function tambah()
@@ -36,10 +36,10 @@ class BooksController extends Controller
 
     public function edit($id)
     {
-
+        
         $books = DB::table('books')->where('id',$id)->get();
         return view('buku.edit',['books' => $books]);
-
+    
     }
 
     public function update(Request $request)
@@ -64,4 +64,6 @@ class BooksController extends Controller
         DB::table('books')->where('id',$id)->delete();
         return redirect('/books');
     }
+    //commit 
+
 }
